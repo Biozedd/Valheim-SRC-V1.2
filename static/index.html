@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valheim Server Panel</title>
+    <link rel="stylesheet" href="/static/style.css?v=3">
+</head>
+<body>
+
+    <main class="panel">
+        <header>
+            <h2>کنترل پنل Valheim</h2>
+            <div id="live-badge" class="badge">در حال بررسی...</div>
+        </header>
+
+        <section class="telemetry-grid">
+            <div class="metric-card">
+                <span>مصرف CPU</span>
+                <strong id="res-cpu">--%</strong>
+            </div>
+            <div class="metric-card">
+                <span>مصرف RAM</span>
+                <strong id="res-ram">--%</strong>
+            </div>
+            <div class="metric-card">
+                <span>پورت شبکه</span>
+                <strong id="res-port">2456</strong>
+            </div>
+        </section>
+
+
+        <section class="control-group">
+            <button id="btn-start" class="btn btn-success">روشن کردن</button>
+            <button id="btn-stop" class="btn btn-danger">خاموش کردن</button>
+        </section>
+        <p id="action-msg" class="status-text">آماده دریافت فرمان</p>
+
+        <hr class="divider">
+
+
+        <section>
+            <h3>مدیریت مادها (Mods)</h3>
+            <div class="mods-box">
+                <span class="coming-soon">Coming Soon</span>
+                <p>قابلیت نصب و مدیریت مادهای سرور به زودی اضافه می‌شود</p>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+
+        <section>
+            <h3>تنظیمات سرور</h3>
+            <form id="settings-form" class="settings-form">
+                <label for="set-name">Server Name</label>
+                <input type="text" id="set-name" placeholder="My Valheim Server" required>
+
+                <label for="set-world">  (World)</label>
+                <input type="text" id="set-world" placeholder="Dedicated" required>
+
+                <label for="set-password">world password (5 char)</label>
+                <input type="text" id="set-password" minlength="5" required>
+
+                <label for="set-port">Server Port (defualt 2456)</label>
+                <input type="number" id="set-port" value="2456" placeholder="2456" min="1024" max="65535" step="1" required>
+
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" id="set-public">
+                        Set public
+                    </label>
+                    <label>
+                        <input type="checkbox" id="set-crossplay">
+                        CrossPlay
+                    </label>
+                </div>
+
+                <button type="submit" id="btn-save" class="btn btn-primary">Save Setting</button>
+                <p id="settings-msg" class="status-text"></p>
+            </form>
+        </section>
+    </main>
+
+    <script src="/static/script.js?v=3"></script>
+</body>
+</html>

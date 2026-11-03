@@ -1,0 +1,209 @@
+:root {
+    color-scheme: dark;
+    --bg-dark: #0f172a;
+    --bg-card: #1e293b;
+    --border-color: #334155;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent-blue: #3b82f6;
+    --accent-cyan: #38bdf8;
+    --accent-green: #10b981;
+    --accent-red: #ef4444;
+    --accent-amber: #f59e0b;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Tahoma, Arial, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.panel {
+    background-color: var(--bg-card);
+    padding: 28px;
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 420px;
+}
+
+h2, h3 {
+    text-align: center;
+    margin-bottom: 14px;
+}
+
+h3 {
+    font-size: 16px;
+    color: var(--text-muted);
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 22px 0;
+}
+
+.badge {
+    width: fit-content;
+    margin: 0 auto 18px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: var(--border-color);
+}
+
+.telemetry-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.metric-card {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+}
+
+.metric-card span {
+    display: block;
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.metric-card strong {
+    font-size: 15px;
+    color: var(--accent-cyan);
+    direction: ltr;
+    display: inline-block;
+}
+
+.control-group {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    flex: 1;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn:hover:not(:disabled) { opacity: 0.9; }
+.btn:active:not(:disabled) { transform: scale(0.98); }
+
+
+.btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.btn-success { background-color: var(--accent-green); }
+.btn-danger  { background-color: var(--accent-red); }
+.btn-primary { background-color: var(--accent-blue); margin-top: 16px; }
+
+.status-text {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--text-muted);
+    min-height: 18px;
+}
+
+
+.mods-box {
+    position: relative;
+    background-color: var(--bg-dark);
+    border: 1px dashed var(--border-color);
+    border-radius: 8px;
+    padding: 20px 14px 16px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.coming-soon {
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent-amber);
+    color: #fff;
+    padding: 2px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+
+.settings-form label {
+    display: block;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin: 12px 0 5px;
+}
+
+.settings-form input[type="text"],
+.settings-form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: inherit;
+}
+
+#set-port::-webkit-inner-spin-button,
+#set-port::-webkit-outer-spin-button {
+    opacity: 0;
+    transition: opacity 0.2s;
+    cursor: pointer;
+}
+
+#set-port:hover::-webkit-inner-spin-button,
+#set-port:focus::-webkit-inner-spin-button {
+    opacity: 1;
+}
+
+
+.checkbox-group {
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    color: var(--text-main);
+    cursor: pointer;
+}
